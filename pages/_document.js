@@ -1,4 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import AdminScript from '../components/admin-pages/utils/scripts'
+
 
 export default function Document() {
   return (
@@ -7,6 +9,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <AdminScript/>
       </body>
     </Html>
   )
