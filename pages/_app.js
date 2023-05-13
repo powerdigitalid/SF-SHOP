@@ -17,6 +17,12 @@ import '../public/dist/css/datatables.css'
 import '../public/dist/css/datatablesbs.css'
 import '../public/dist/css/datatablesbsselect.css'
 
+//lading pages
+import '../public/dist/css/ladingpage/flex-slider.css'
+import '../public/dist/css/ladingpage/fontawesome.css'
+import '../public/dist/css/ladingpage/owl.css'
+import '../public/dist/css/ladingpage/templatemo-sixteen.css'
+
 export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />
 }

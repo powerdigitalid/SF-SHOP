@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import AdminScript from '../components/admin-pages/utils/scripts'
+import LadingScript from '../components/ladingpages/utils/scripts'
 
 
 export default function Document() {
@@ -10,6 +11,7 @@ export default function Document() {
         <Main />
         <NextScript />
         <AdminScript/>
+        <LadingScript/>
       </body>
     </Html>
   )
