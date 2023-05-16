@@ -4,27 +4,27 @@ export default function Navbar() {
 
   return (
     <div>
-      <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <a class="navbar-brand" href="index.html"><h2>Sixteen <em>Clothing</em></h2></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+      <nav className=" navbar-expand-lg  bg-dark">
+        <div className="container">
+          <a className="navbar-brand" href="index.html"><h2 className="text-white">SF Shop</h2></a>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon" />
           </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home
-                  <span class="sr-only">(current)</span>
+          <div className="collapse navbar-collapse" id="navbarResponsive">
+            <ul className="navbar-nav ml-auto ">
+              <li className="nav-item active">
+                <a className="nav-link text-white" href="index.html" >Home
+                  <span className="sr-only">(current)</span>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="products.html">Our Products</a>
+              <li className="nav-item">
+                <a className="nav-link text-white" href="products.html">Our Products</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
+              <li className="nav-item">
+                <a className="nav-link text-white" href="about.html">About Us</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
+              <li className="nav-item">
+                <a className="nav-link text-white" href="contact.html">Contact Us</a>
               </li>
             </ul>
           </div>
@@ -32,5 +32,7 @@ export default function Navbar() {
       </nav>
       <Banner/>
     </div>
+
+
   )
 }
