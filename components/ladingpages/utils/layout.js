@@ -2,6 +2,7 @@ import Footer from "./footer";
 import Navbar from "./navbar";
 import Head from "next/head";
 import Banner from "./banner";
+import Backtotop from "./backtotop";
 
 
 export default function Layout({ children }) {
@@ -23,6 +24,7 @@ export default function Layout({ children }) {
       </div>
       <div className="body-inner">
         <Navbar />
+        <Backtotop />
         {children}
         <Footer />
       </div>
