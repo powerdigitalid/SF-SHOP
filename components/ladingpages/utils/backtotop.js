@@ -1,37 +1,74 @@
-import React from "react";
+import { useState, useEffect } from 'react';
 
-export default function Backtotop() {
-  let mybutton = document.getElementById("myBtn");
 
-  window.onscroll = function () {
-    scrollFunction();
+const Backtotop = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+
+    window.addEventListener('scroll', toggleVisibility);
+
+
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
-  function scrollFunction() {
-    if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
-    ) {
-      mybutton.style.display = "block";
-    } else {
-      mybutton.style.display = "none";
-    }
-  }
-
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
   return (
-    <div>
-      <button
-        onClick={() => topFunction()}
-        className="btn btn-primary"
-        id="myBtn"
-        title="Go to top"
-      >
-        Top
-      </button>
-    </div>
+    <>
+      {isVisible && (
+        <div
+          className="back-to-top"
+          onClick={scrollToTop}
+        >
+          <span>UP</span>
+        </div>
+      )}
+
+      <style jsx>{`
+        .back-to-top {
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          width: 50px;
+          height: 50px;
+          background-color: #ff0000;
+          color: #fff;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          opacity: 0.7;
+          transition: opacity 0.3s;
+        }
+
+        .back-to-top:hover {
+          opacity: 1;
+        }
+
+        .back-to-top span {
+          font-size: 20px;
+        }
+      `}</style>
+    </>
   );
-}
+};
+
+export default Backtotop;

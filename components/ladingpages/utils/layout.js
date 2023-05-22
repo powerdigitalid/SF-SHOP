@@ -24,9 +24,9 @@ export default function Layout({ children }) {
       </div>
       <div className="body-inner">
         <Navbar />
-        <Backtotop />
         {children}
         <Footer />
+        <Backtotop />
       </div>
     </div>
   );
