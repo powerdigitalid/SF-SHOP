@@ -17,16 +17,10 @@ export default function Product() {
                             <a href="#"><img src="/dist/img/ladingpage/product_01.jpg" alt /></a>
                             <div className="down-content">
                                 <a href="#"><h4>Tittle goes here</h4></a>
-                                <h6>$25.75</h6>
+                                <h6 className=''>Rp. 250.000</h6>
                                 <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                                <ul className="stars">
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                </ul>
-                                <span>Reviews (24)</span>
+                                <button type="button" className="btn btn-sm btn-primary">Add to Cart</button>
+                                <button type="button" className="btn btn-sm btn-danger ml-2">Buy Now</button>
                             </div>
                         </div>
                     </div>
