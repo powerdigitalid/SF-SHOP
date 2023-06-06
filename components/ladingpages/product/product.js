@@ -17,7 +17,7 @@ export default function Product() {
                             <a href="#"><img src="/dist/img/ladingpage/product_01.jpg" alt /></a>
                             <div className="down-content">
                                 <a href="#"><h4>Tittle goes here</h4></a>
-                                <h6 className=''>Rp. 250.000</h6>
+                                <h5 className='mb-3'>Rp. 250.000</h5>
                                 <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
                                 <button type="button" className="btn btn-sm btn-primary">Add to Cart</button>
                                 <button type="button" className="btn btn-sm btn-danger ml-2">Buy Now</button>
@@ -29,16 +29,10 @@ export default function Product() {
                             <a href="#"><img src="/dist/img/ladingpage/product_02.jpg" alt /></a>
                             <div className="down-content">
                                 <a href="#"><h4>Tittle goes here</h4></a>
-                                <h6>$30.25</h6>
+                                <h5 className='mb-3'>Rp. 250.000</h5>
                                 <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                                <ul className="stars">
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                </ul>
-                                <span>Reviews (21)</span>
+                                <button type="button" className="btn btn-sm btn-primary">Add to Cart</button>
+                                <button type="button" className="btn btn-sm btn-danger ml-2">Buy Now</button>
                             </div>
                         </div>
                     </div>
@@ -47,16 +41,10 @@ export default function Product() {
                             <a href="#"><img src="/dist/img/ladingpage/product_03.jpg" alt /></a>
                             <div className="down-content">
                                 <a href="#"><h4>Tittle goes here</h4></a>
-                                <h6>$20.45</h6>
+                                <h5 className='mb-3'>Rp. 250.000</h5>
                                 <p>Sixteen Clothing is free CSS template provided by TemplateMo.</p>
-                                <ul className="stars">
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                </ul>
-                                <span>Reviews (36)</span>
+                                <button type="button" className="btn btn-sm btn-primary">Add to Cart</button>
+                                <button type="button" className="btn btn-sm btn-danger ml-2">Buy Now</button>
                             </div>
                         </div>
                     </div>
@@ -65,16 +53,10 @@ export default function Product() {
                             <a href="#"><img src="/dist/img/ladingpage/product_04.jpg" alt /></a>
                             <div className="down-content">
                                 <a href="#"><h4>Tittle goes here</h4></a>
-                                <h6>$15.25</h6>
+                                <h5 className='mb-3'>Rp. 250.000</h5>
                                 <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                                <ul className="stars">
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                </ul>
-                                <span>Reviews (48)</span>
+                                <button type="button" className="btn btn-sm btn-primary">Add to Cart</button>
+                                <button type="button" className="btn btn-sm btn-danger ml-2">Buy Now</button>
                             </div>
                         </div>
                     </div>
@@ -83,16 +65,10 @@ export default function Product() {
                             <a href="#"><img src="/dist/img/ladingpage/product_05.jpg" alt /></a>
                             <div className="down-content">
                                 <a href="#"><h4>Tittle goes here</h4></a>
-                                <h6>$12.50</h6>
+                                <h5 className='mb-3'>Rp. 250.000</h5>
                                 <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                                <ul className="stars">
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                </ul>
-                                <span>Reviews (16)</span>
+                                <button type="button" className="btn btn-sm btn-primary">Add to Cart</button>
+                                <button type="button" className="btn btn-sm btn-danger ml-2">Buy Now</button>
                             </div>
                         </div>
                     </div>
@@ -101,16 +77,10 @@ export default function Product() {
                             <a href="#"><img src="/dist/img/ladingpage/product_06.jpg" alt /></a>
                             <div className="down-content">
                                 <a href="#"><h4>Tittle goes here</h4></a>
-                                <h6>$22.50</h6>
+                                <h5 className='mb-3'>Rp. 250.000</h5>
                                 <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                                <ul className="stars">
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                    <li><i className="fa fa-star" /></li>
-                                </ul>
-                                <span>Reviews (32)</span>
+                                <button type="button" className="btn btn-sm btn-primary">Add to Cart</button>
+                                <button type="button" className="btn btn-sm btn-danger ml-2">Buy Now</button>
                             </div>
                         </div>
                     </div>

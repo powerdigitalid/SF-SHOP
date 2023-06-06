@@ -1,4 +1,3 @@
-import Banner from "./banner";
 
 export default function Navbar() {
   return (
@@ -56,26 +55,31 @@ export default function Navbar() {
           </label>
         </div>
         <div className="nav-links">
-          <a href="//github.io/jo_geek" target="_blank">
+          <a href="#" target="_blank">
             Home
           </a>
-          <a href="http://stackoverflow.com/users/4084003/" target="_blank">
+          <a href="#" target="_blank">
             Produk
           </a>
           <a
-            href="https://in.linkedin.com/in/jonesvinothjoseph"
+            href="#"
             target="_blank"
           >
             Tentang Kami
           </a>
-          <a href="https://codepen.io/jo_Geek/" target="_blank">
+          <a href="#" target="_blank">
             Contact Us
           </a>
         </div>
         <div>
-          <button className="btn btn-outline-success mt-2 ml-3" type="submit">
+          <a href="#" className="btn btn-outline-success mt-2 ml-3">
             Login
-          </button>
+          </a>
+        </div>
+        <div>
+         <a href="/ladingpage/chart" className="btn btn-outline-success mt-2 ml-1">
+          Cart <i className="lni lni-cart-full" />
+          </a> 
         </div>
       </div>
     </div>
