@@ -1,44 +1,44 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { useState } from "react";
-import { setCookie } from "../../utils/cookie.util";
+import React, {useState} from 'react';
+import {setCookie} from '../../libs/cookie.lib';
+import Swl from 'sweetalert2';
 export default function LoginComponent() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
   const router = useRouter();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const handleSubmit = (e) => {
+
+  const handleLogin = (e) =>{
     e.preventDefault();
     setLoading(true);
-    const user = { username: username, password: password };
-    fetch(`${process.env.NEXT_PUBLIC_API_DEV}auth/login`, {
+    fetch('api/auth/login', {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(user),
+      headers:{
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username,
+        password
+      }),
     })
-      .then((res) => res.json())
-      .then((data) => {
-        if (!data.token) {
-          setError(data.message);
-          setLoading(false);
-        } else {
-          setLoading(false);
-          setCookie("username", data.data.username, 1);
-          setCookie("id", data.data.id, 1);
-          setCookie("token", data.token, 1);
-          setError(data.message + " Redirecting in 3 seconds...")
-          setTimeout(() => {
-            router.push("/admin");
-          }, 3000);
-        }
-      })
-      .catch((err) => {
-        alert("Error occured, please contact admin for more information.");
-        setError(err.message);
-        console.error(err);
-        setLoading(false);
-      });
+    .then((res) => res.json())
+    .then((data) => {
+      if(data.message === "Login success" && data.user.token){
+        Swl.fire("Login Success!", "Login Success Redirected in 3 second!", "success");
+        setCookie("token", data.user.token, 1);
+        router.push("/admin");
+      } else {
+        setError(data.message);
+      }
+      setLoading(false);
+    })
+    .catch((err) => {
+      setError(err);
+      Swl.fire("Login Failed!", "Login Failed Redirected in 3 secon!" + err, "error");
+      setLoading(false)
+    });
   };
   return (
     <section className="section">
@@ -49,12 +49,12 @@ export default function LoginComponent() {
         <div className="row">
           <div className="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
             <div className="login-brand">
-              <Image
+              {/* <Image
                 src="dist/img/logo/logos.png"
                 alt="logo"
                 width={200}
                 className="shadow-light"
-              />
+              /> */}
             </div>
             <div className="card card-primary">
               <div className="card-header">
@@ -108,7 +108,7 @@ export default function LoginComponent() {
                       className="btn btn-primary btn-lg btn-block"
                       tabIndex={4}
                       href="#"
-                      onClick={handleSubmit}
+                      onClick={handleLogin}
                     >
                       {loading ? "Loading..." : "Login"}
                     </button>

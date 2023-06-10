@@ -2,8 +2,17 @@ import React from 'react'
 import Layout from '../../components/admin-pages/utils/layout'
 import Head from 'next/head'
 import Dashboard from '../../components/admin-pages/dashboard/dashboard'
+import {useEffect} from 'react'
+import {getCookie, validateToken} from '../../libs/cookie.lib'
 
 export default function Index() {
+  useEffect(() => {
+    if(getCookie('token') === "" && getCookie("username") === ""){
+      window.location.href = "/login";
+    }else{
+      validateToken(getCookie('token')) ? null : window.location.href = "/login";
+    }
+  }, [])
   return (
     <div>
       <Layout>
