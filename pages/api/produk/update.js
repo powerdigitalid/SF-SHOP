@@ -30,7 +30,7 @@ export default async (req, res) => {
                 return res.status(400).json({ error: err.message });
             }
             const {product_name, product_price, product_desc } = req.body;
-            const product_img = `/uploads/${req.file.filename}`;
+            const product_img = req.file ? `/upload/${req.file.filename}` : req.body.image;
             const id = req.query.id;
             const updateProduct = await prisma.product.update({
                 where: {
