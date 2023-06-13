@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from 'react'
 import { useRouter } from "next/router";
+import Swal from 'sweetalert2'
 
 export default function AllProducts() {
     const [data, setData] = useState([])
@@ -36,10 +37,20 @@ export default function AllProducts() {
         .then((res) => res.json())
         .then((res) => {
             if (res.data) {
-                alert("delete oke")
+                Swal.fire({
+                    title: "Berhasil menghapus produk",
+                    icon: "success",
+                    showConfirmButton: false,
+                    timer: 1500,
+                })
                 handleProduct();
             } else {
-                alert("Gagal menghapus produk");
+                Swal.fire({
+                    title: "Gagal menghapus produk",
+                    icon: "error",
+                    showConfirmButton: false,
+                    timer: 1500,
+                })
             }
         })
     };

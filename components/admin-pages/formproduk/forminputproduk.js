@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import Swal from 'sweetalert2'
 
 export default function FormInputProduct() {
   const [productName, setProductName] = useState("");
@@ -28,7 +29,12 @@ export default function FormInputProduct() {
       .then((data) => {
         console.log(data); // Handle response data
         // Clear form fields
-        alert("Data berhasil diinput");
+        Swal.fire({
+          title: "Berhasil menambahkan produk",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 1500,
+        })
         setProductName("");
         setProductPrice("");
         setProductDesc("");
@@ -36,9 +42,15 @@ export default function FormInputProduct() {
       })
       .catch((error) => {
         console.error(error);
-        alert("error");
+        Swal.fire({
+          title: "Gagal menambahkan produk",
+          icon: "error",
+          showConfirmButton: false,
+          timer: 1500,
+        })
       });
   };
+
   return (
     <>
       <div className="card author-box card-primary">
