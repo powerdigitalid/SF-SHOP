@@ -1,11 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from "react";
-// import { useSession, signIn } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 export default function Product() {
-    // const { data: session, status } = useSession();
+    const { data: session, status } = useSession();
   const [cart, setCart] = useState({});
-  // const [order, setOrder] = useState([]);
+  const [order, setOrder] = useState([]);
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
@@ -31,6 +31,42 @@ export default function Product() {
       });
   };
 
+  //add handle button add to cart produk and user session
+  const handleAddToCart = (id, product_price, product_name) => {
+    if (session) {
+      //how to fetch data product_id and product_price product
+      fetch("/api/order/cart", {
+        method: "POST",
+        body: JSON.stringify({
+          user_google: session.user.email,
+          product_id: id,
+          product_name: product_name,
+          product_price: product_price,
+          quantity: 1,
+          total: product_price,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          if (res.data) {
+            setCart(res.data);
+            router.push("/");
+          } else {
+            setCart({});
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          setCart({});
+        });
+    } else {
+      signIn("google");
+    }
+  };
+
   useEffect(() => {
     handleProduct();
   }, []);
@@ -53,7 +89,7 @@ export default function Product() {
                                 <a href="#"><h4>{prod.product_name}</h4></a>
                                 <h5 className='mb-3'>Rp. {prod.product_price}</h5>
                                 <p>{prod.product_desc}</p>
-                                <button type="button" className="btn btn-sm btn-primary">Add to Cart</button>
+                                <button type="button" className="btn btn-sm btn-primary" onClick={() => handleAddToCart(prod.id, prod.product_price, prod.product_name)}>Add to Cart</button>
                                 <button type="button" className="btn btn-sm btn-danger ml-2">Buy Now</button>
                             </div>
                         </div>
