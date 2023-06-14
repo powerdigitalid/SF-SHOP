@@ -15,7 +15,7 @@ export default function Layout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* Loader */}
-      <div id="preloader">
+      <div >
         <div class="jumper">
           <div></div>
           <div></div>
