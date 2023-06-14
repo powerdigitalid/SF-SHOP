@@ -46,6 +46,24 @@ export default function Sidebar() {
     handleCheckActiveMenu();
   }, [activeMenu]);
 
+  const handleLogout =()=>{
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You want to logout from this session?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Logout'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        router.push("/");
+      }
+    })
+  }
+
   return (
     <div className="main-sidebar sidebar-style-2">
       <aside id="sidebar-wrapper">
@@ -95,6 +113,7 @@ export default function Sidebar() {
           <button
             className="btn btn-success border-0 btn-lg btn-block btn-icon-split"
             style={{height: "40px", backgroundColor:"#00cc00", color:"white"}}
+            onClick={handleLogout}
           >
             <i className="fas fa-sign-out-alt"/><span className="hide-sidebar-mini">Close</span>
           </button>

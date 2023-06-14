@@ -98,7 +98,7 @@ export default function Chart() {
       .then((res) => {
         if (res.data) {
           Swal.fire("Berhasil hapus");
-          router.replace("/landingpage/chart");
+          router.replace("/ladingpage/chart");
           fetchData();
           // window.location.reload();
         } else {
@@ -146,7 +146,7 @@ export default function Chart() {
               timer: 1500,
             });
             handleClear();
-            router.push("/landingpage/chart/order");
+            router.push("/ladingpage/chart/order");
           } else {
             Swal.fire({
               title: "Are you sure?",

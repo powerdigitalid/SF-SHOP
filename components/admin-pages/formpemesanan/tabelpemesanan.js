@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { useState, useEffect } from "react";
+import Swal from 'sweetalert2'
 
 export default function Tabelpemesanan() {
   const [data, setData] = useState([]);
@@ -39,7 +40,12 @@ export default function Tabelpemesanan() {
       .then((res) => res.json())
       .then((res) => {
         if (res.data) {
-          alert("Order berhasil dikonfirmasi");
+          Swal.fire({
+            icon: "success",
+            title: "Order berhasil DiConfirmasi",
+            showConfirmButton: true,
+            showCancelButton: true,
+        });
           handleOrder();
         } else {
           alert("Order gagal dikonfirmasi");
@@ -47,9 +53,54 @@ export default function Tabelpemesanan() {
       })
       .catch((err) => {
         console.log(err);
-        alert("Order gagal dikonfirmasi");
+        Swal.fire({
+          icon: "error",
+          title: "Order gagal diconfirmasi",
+          showConfirmButton: true,
+          showDenyButton: true,
+      });
       });
   };
+
+  const handleTolak = (e,id)=>{
+    e.preventDefault();
+    fetch(`/api/order/tolak`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: id }),
+    })
+        .then((res) => res.json())
+        .then((res) => {
+            if (res.data) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Order berhasil ditolak",
+                    showConfirmButton: true,
+                    showCancelButton: true,
+                    timer: 1500,
+                });
+                handleOrder();
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Order gagal ditolak",
+                    showConfirmButton: true,
+                    showDenyButton: true,
+                });
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+            Swal.fire({
+                icon: "error",
+                title: "Order gagal ditolak",
+                showConfirmButton: true,
+                showDenyButton: true,
+            });
+        });
+    }
 
   useEffect(() => {
     handleOrder();
@@ -100,7 +151,7 @@ export default function Tabelpemesanan() {
                                 <i className="fas fa-edit mr-1" />
                                 Confirmasi
                               </button>
-                              <button className="btn btn-danger rounded text-white">
+                              <button className="btn btn-danger rounded text-white" onClick={(e) => handleTolak(e, order.id)}>
                                 <i className="far fa-times-circle mr-1" />
                                 Tolak
                               </button>

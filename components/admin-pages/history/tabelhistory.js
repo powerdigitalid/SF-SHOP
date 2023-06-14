@@ -27,6 +27,25 @@ export default function Tabelhistory() {
       });
   };
 
+  const handleDelete = (id) => {
+    fetch(`/api/order/delete?id=${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.data) {
+          Swal.fire("Berhasil hapus");
+          router.replace("/landingpage/chart");
+          fetchData();
+          // window.location.reload();
+        } else {
+          Swal.fire("Gagal hapus");
+          console.log(res);
+        }
+        // window.location.reload();
+      });
+  };
+
   useEffect(() => {
     handleOrder();
   }, []);
@@ -69,7 +88,7 @@ export default function Tabelhistory() {
                                 <i className="far fa-eye mr-1" />
                                 Detail
                               </Link>
-                              <button className="btn btn-danger rounded text-white">
+                              <button className="btn btn-danger rounded text-white" onClick={() => handleDelete(order.id)}>
                                 <i className="far fa-trash-alt mr-1" />
                                 Hapus
                               </button>
