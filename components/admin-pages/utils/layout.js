@@ -12,7 +12,7 @@ export default function Layout({ children }) {
         <title>Admin | SF-SHOP</title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="shortcut icon" href="../dist/img/logo/logos.png" />
+        <link rel="shortcut icon" href="../dist/img/logo/logo2.png" />
       </Head>
       <div id="app">
         <div className="main-wrapper main-wrapper-1">

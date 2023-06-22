@@ -69,14 +69,16 @@ export default function Navbar() {
         <div className="nav">
           <input type="checkbox" id="nav-check" />
           <div className="nav-header ">
-            <div className="nav-title">SF Shop</div>
-          </div>
-          <div className="nav-btn">
-            <label htmlFor="nav-check">
-              <span />
-              <span />
-              <span />
-            </label>
+            <div className="nav-title">
+              <div className="nav-title">
+                <img
+                  src="/dist/img/logo/logo2.png"
+                  className=""
+                  style={{width:"70px", height:"70px"}}
+                  alt="slide"
+                />
+              </div>
+            </div>
           </div>
           <div className="nav-links">
             <a href="#" target="_blank">
@@ -173,14 +175,14 @@ export default function Navbar() {
         <div className="nav">
           <input type="checkbox" id="nav-check" />
           <div className="nav-header ">
-            <div className="nav-title">SF Shop</div>
-          </div>
-          <div className="nav-btn">
-            <label htmlFor="nav-check">
-              <span />
-              <span />
-              <span />
-            </label>
+            <div className="nav-title">
+              <img
+                src="/dist/img/logo/logo2.png"
+                className=""
+                style={{width:"70px", height:"70px"}}
+                alt="slide"
+              />
+            </div>
           </div>
           <div className="nav-links">
             <a href="#" target="_blank">
@@ -205,12 +207,12 @@ export default function Navbar() {
             </a>
           </div>
           <div>
-            <a
+            <Link
               href="/ladingpage/chart"
               className="btn btn-outline-success mt-2 ml-1"
             >
               Cart <i className="lni lni-cart-full" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
