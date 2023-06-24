@@ -66,21 +66,21 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-        <div className="nav">
+        <div className="nav d-flex">
           <input type="checkbox" id="nav-check" />
-          <div className="nav-header ">
-            <div className="nav-title">
-              <div className="nav-title">
+          <div className="nav-header mt-1">
+            <div className="">
+              <div className="">
                 <img
                   src="/dist/img/logo/logo2.png"
                   className=""
-                  style={{width:"70px", height:"70px"}}
+                  style={{ width: "70px", height: "70px" }}
                   alt="slide"
                 />
               </div>
             </div>
           </div>
-          <div className="nav-links">
+          <div className="nav-links" style={{marginTop:"12px"}}>
             <a href="#" target="_blank">
               Home
             </a>
@@ -102,7 +102,8 @@ export default function Navbar() {
           <div>
             <Link
               href={`/ladingpage/chart?user_google=${session?.user?.email}`}
-              className="btn btn-outline-success mt-2 ml-1"
+              className="btn btn-outline-success ml-1"
+              style={{marginTop:"20px"}}
             >
               Cart {cart.length} <i className="lni lni-cart-full" />
             </Link>
@@ -110,13 +111,14 @@ export default function Navbar() {
           <div>
             <button
               onClick={() => signOut()}
-              className="btn btn-block border-2"
+              className="btn btn-outline-success ml-3"
+              style={{marginTop:"20px"}}
             >
               Sign Out
             </button>
           </div>
-          <div className="navbar-nav ml-2  ">
-            <div className="nav-item ml-2">
+          <div className=" ml-auto mr-3" style={{marginTop:"14px"}}>
+            <div className="">
               <img
                 src={session.user.image}
                 alt="user"
@@ -179,12 +181,12 @@ export default function Navbar() {
               <img
                 src="/dist/img/logo/logo2.png"
                 className=""
-                style={{width:"70px", height:"70px"}}
+                style={{ width: "70px", height: "70px" }}
                 alt="slide"
               />
             </div>
           </div>
-          <div className="nav-links">
+          <div className="nav-links" style={{marginTop:"12px"}}>
             <a href="#" target="_blank">
               Home
             </a>
@@ -201,7 +203,8 @@ export default function Navbar() {
           <div>
             <a
               onClick={() => signIn()}
-              className="btn btn-outline-success mt-2 ml-3"
+              className="btn btn-outline-success ml-3"
+              style={{marginTop:"20px"}}
             >
               Login
             </a>
@@ -209,7 +212,8 @@ export default function Navbar() {
           <div>
             <Link
               href="/ladingpage/chart"
-              className="btn btn-outline-success mt-2 ml-1"
+              className="btn btn-outline-success ml-1"
+              style={{marginTop:"20px"}}
             >
               Cart <i className="lni lni-cart-full" />
             </Link>

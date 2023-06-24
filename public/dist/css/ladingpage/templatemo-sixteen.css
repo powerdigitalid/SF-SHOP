@@ -10,8 +10,6 @@ https://templatemo.com/tm-546-sixteen-clothing
   height: 75px;
   width: 100%;
   background-color: #4d4d4d;
-  position: relative;
-  padding-top: 15px;
 }
 
 .nav > .nav-header {
@@ -33,7 +31,7 @@ https://templatemo.com/tm-546-sixteen-clothing
 
 .nav > .nav-links {
   display: inline;
-  float: right;
+  
   font-size: 18px;
 }
 
@@ -90,7 +88,7 @@ https://templatemo.com/tm-546-sixteen-clothing
     transition: all 0.3s ease-in;
     overflow-y: hidden;
     top: 75px;
-    left: 0px;
+    
     z-index: 1;
   }
   .nav > .nav-links > a {
