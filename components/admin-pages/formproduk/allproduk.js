@@ -38,19 +38,19 @@ export default function AllProducts() {
         .then((res) => {
             if (res.data) {
                 Swal.fire({
-                    title: "Berhasil menghapus produk",
                     icon: "success",
+                    title: "Berhasil menghapus produk",
                     showConfirmButton: false,
                     timer: 1500,
-                })
+                });
                 handleProduct();
             } else {
                 Swal.fire({
-                    title: "Gagal menghapus produk",
                     icon: "error",
+                    title: "Gagal menghapus produk",
                     showConfirmButton: false,
                     timer: 1500,
-                })
+                });
             }
         })
     };
@@ -58,45 +58,47 @@ export default function AllProducts() {
     useEffect(() => {
         handleProduct();
     }, []);
+
+
     return (
-<div className="container-fluid" id="detail">
-        {data.length > 0 ? data.map((prod, index) => (
-            <div className="row  py-2 shadow-sm my-3 " key={index}>
-            <div className="col-lg-3">
-                <div
-                    id="product-carousel"
-                    className="carousel slide"
-                    data-ride="carousel"
-                >
-                    <div className="carousel-inner ">
-                        <div className="carousel-item active">
-                            <img
-                                className="w-100 h-100"
-                                src={prod.product_img}
-                                alt="Image"
-                            />
+        <div className="container-fluid" id="detail">
+            {data.length > 0 ? data.map((prod, index) => (
+                <div className="row  py-2 shadow-sm my-3 " key={index}>
+                <div className="col-lg-3">
+                    <div
+                        id="product-carousel"
+                        className="carousel slide"
+                        data-ride="carousel"
+                    >
+                        <div className="carousel-inner ">
+                            <div className="carousel-item active">
+                                <img
+                                    className="w-100 h-100"
+                                    src={prod.product_img}
+                                    alt="Image"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="col-lg-9">
-                <div className="row">
-                    <div className="col-md-8">
-                        <h3 className="font-weight-semi-bold">{prod.product_name}</h3>
-                        <h3 className="font-weight-semi-bold mb-4">{prod.product_desc}</h3>
+                <div className="col-lg-9">
+                    <div className="row">
+                        <div className="col-md-8">
+                            <h3 className="font-weight-semi-bold">{prod.product_name}</h3>
+                            <h3 className="font-weight-semi-bold mb-4">Rp.{prod.product_price}</h3>
+                        </div>
+                        <div className="col-md-4">
+                            <Link href={`/admin/formprodukpages/editproduk?id=${prod.id}`} className="btn btn-primary rounded mr-2 text-white">Edit</Link>
+                            <button className="btn btn-danger rounded" onClick={() => handleDelete(prod.id)}>Delete</button>
+                        </div>
                     </div>
-                    <div className="col-md-4">
-                        <Link href={`/admin/formprodukpages/editproduk?id=${prod.id}`} className="btn btn-primary rounded mr-2 text-white">Edit</Link>
-                        <button className="btn btn-danger rounded" onClick={() => handleDelete(prod.id)}>Delete</button>
-                    </div>
+                    <p className="m4b-">
+                        {prod.product_desc}
+                    </p>
                 </div>
-                <p className="m4b-">
-                    {prod.product_desc}
-                </p>
-            </div>
 
+            </div>
+            )) : <h3 className="text-center">Belum ada produk</h3>}
         </div>
-        )) : <h3 className="text-center">Belum ada produk</h3>}
-    </div>
     );
 }
