@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import { useSession, signIn } from "next-auth/react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 export default function Product() {
     const { data: session, status } = useSession();
   const [cart, setCart] = useState({});
@@ -90,7 +91,9 @@ export default function Product() {
                                 <h5 className='mb-3'>Rp. {prod.product_price}</h5>
                                 <p>{prod.product_desc}</p>
                                 <button type="button" className="btn btn-sm btn-primary" onClick={() => handleAddToCart(prod.id, prod.product_price, prod.product_name)}>Add to Cart</button>
-                                <button type="button" className="btn btn-sm btn-danger ml-2">Buy Now</button>
+                                <Link href={`/ladingpage/detail?id=${prod.id}`} >
+                                <button type="button" className="btn btn-sm btn-danger ml-2">Detail</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
