@@ -122,6 +122,7 @@ export default function Tabelpemesanan() {
                     <thead>
                       <tr>
                         <th scope="col">No.</th>
+                        <th scope="col">Nama</th>
                         <th scope="col">Email</th>
                         <th scope="col">Total</th>
                         <th scope="col">Ekspedisi</th>
@@ -133,6 +134,7 @@ export default function Tabelpemesanan() {
                         data.map((order, index) => (
                           <tr key={index}>
                             <th scope="row">{index + 1}</th>
+                            <td>{order.nama_pelanggan}</td>
                             <td>{order.user_google}</td>
                             <td>{order.total}</td>
                             <td>{order.expedisi}</td>

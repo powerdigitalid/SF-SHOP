@@ -41,6 +41,8 @@ model Order {
   total       Int
   address     String?
   expedisi    String?
+  no_telp     String?
+  nama_pelanggan String?
   shipping    Int?
   user_google String
   name_user   String?

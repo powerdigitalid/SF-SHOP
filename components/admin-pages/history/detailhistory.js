@@ -48,16 +48,13 @@ export default function Detailhistory() {
                     // src={data.cart.product.product_img}
                     style={{ width: 50 }}
                   />
-                  <span className="ml-3">
-                    {data.cart?.product?.product_name}
-                  </span>
+                  <span className="ml-3">{data.cart?.product?.product_name}</span>
                 </td>
-                <td className="align-middle">
-                  Rp.{data.cart?.product?.product_price}
-                </td>
+                <td className="align-middle">Rp.{data.cart?.product?.product_price}</td>
                 <td className="align-middle">{data.cart?.quantity}</td>
                 <td className="align-middle">Rp.{data.cart?.total}</td>
               </tr>
+
             </tbody>
           </table>
         </div>
@@ -70,10 +67,13 @@ export default function Detailhistory() {
           <h5>BRI : ...</h5>
           <h5>BNI : ...</h5>
           <div className="d-flex mb-4 mt-4">
-            <p className="text-dark font-weight-medium mb-0 mr-3">
-              Ekspedisi: {data.expedisi}
-            </p>
+            <p className="text-dark font-weight-medium mb-0 mr-3">Ekspedisi: {data.expedisi}</p>
+            
           </div>
+          <h6>Nama</h6>
+          <h4>{data.nama_pelanggan}</h4>
+          <h6>Nomor Hp</h6>
+          <h4>{data.no_telp}</h4>
           <h6>Alamat</h6>
           <h4>{data.address}</h4>
           <div className="card border-secondary mb-5">
@@ -95,10 +95,7 @@ export default function Detailhistory() {
                 <h5 className="font-weight-bold">Total</h5>
                 <h5 className="font-weight-bold">Rp.{data.total}</h5>
               </div>
-              <Link
-                href="/admin/history"
-                className="btn btn-block btn-primary my-3 py-3"
-              >
+              <Link href="/admin/pemesanan" className="btn btn-block btn-primary my-3 py-3">
                 Kembali
               </Link>
             </div>
