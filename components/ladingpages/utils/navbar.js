@@ -81,16 +81,16 @@ export default function Navbar() {
             </div>
           </div>
           <div className="nav-links" style={{marginTop:"12px"}}>
-            <a href="#" target="_blank">
+            <a href="/">
               Home
             </a>
-            <a href="#" target="_blank">
+            <a href="/#produk" target="_blank">
               Produk
             </a>
-            <a href="#" target="_blank">
+            <a href="/#about" target="_blank">
               Tentang Kami
             </a>
-            <a href="#" target="_blank">
+            <a href="/#contact" target="_blank">
               Contact Us
             </a>
           </div>
@@ -187,16 +187,16 @@ export default function Navbar() {
             </div>
           </div>
           <div className="nav-links" style={{marginTop:"12px"}}>
-            <a href="#" target="_blank">
+            <a href="/">
               Home
             </a>
-            <a href="#" target="_blank">
+            <a href="/#produk" target="_blank">
               Produk
             </a>
-            <a href="#" target="_blank">
+            <a href="/#about" target="_blank">
               Tentang Kami
             </a>
-            <a href="#" target="_blank">
+            <a href="/#contact" target="_blank">
               Contact Us
             </a>
           </div>

@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="">
+    <footer className="" id="contact">
       <div className="container">
         <div className="row">
           <div className="col-md-12">

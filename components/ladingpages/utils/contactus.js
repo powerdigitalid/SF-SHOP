@@ -18,7 +18,7 @@ export default function Contactus() {
                     </p>
                   </div>
                   <div className="col-md-4">
-                    <a href="#" className="filled-button">
+                    <a href="https://wa.me/+6283147680140" className="filled-button">
                       Hubungi Kami
                     </a>
                   </div>

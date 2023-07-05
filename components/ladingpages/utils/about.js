@@ -3,7 +3,7 @@ import React from "react";
 export default function About() {
   return (
     <div>
-      <div className="best-features">
+      <div className="best-features" id="about">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
@@ -35,8 +35,8 @@ export default function About() {
                   - Bath medicine (Sabun, Shampoo, dll)
                   </li>
                 </ul>
-                <a href="#" className="filled-button">
-                  Read More
+                <a href="https://wa.me/+6283147680140" className="filled-button">
+                  Hubungi Kami
                 </a>
               </div>
             </div>

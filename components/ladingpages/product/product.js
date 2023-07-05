@@ -73,13 +73,12 @@ export default function Product() {
   }, []);
   return (
     <div>
-    <div className="latest-products">
+    <div className="latest-products" id='produk'>
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
                         <div className="section-heading">
-                            <h2>Latest Products</h2>
-                            <a href="products.html">view all products <i className="fa fa-angle-right" /></a>
+                            <h2>All Produk</h2>
                         </div>
                     </div>
                     {data.length > 0 ? data.map((prod, index) => (
