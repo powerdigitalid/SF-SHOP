@@ -18,7 +18,7 @@ export default function Banner() {
                     <p>
                       Kami menyediakan berbagai macam produk skincare, bodycare, makeup, dan haircare yang terjamin keasliannya.
                     </p>
-                    <br /> <a href="#">Selengkapnya</a>
+                    <br /> <a href="/#produk">Selengkapnya</a>
                   </div>
                   <div className="col-md-5 col-12 order-md-2 order-1">
                     <img
