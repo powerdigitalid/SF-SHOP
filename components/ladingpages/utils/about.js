@@ -3,7 +3,7 @@ import React from "react";
 export default function About() {
   return (
     <div>
-      <div className="best-features" id="about">
+      <div className="best-features">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
@@ -11,7 +11,7 @@ export default function About() {
                 <h2>Tentang Kami</h2>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" id="about">
               <div className="left-content">
                 <h4>Kami menyediakan Produk kecantikan terbaik</h4>
                 <p>
